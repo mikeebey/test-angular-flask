@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigService } from './app.service'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private configService: ConfigService){}
   title = 'try-angular-flask';
+  info = ""
+  ngOnInit()
+  {
+    console.log(this.configService.getBasicInfo().subscribe((res:any)=>{console.log(res)}))
+  }
 }
