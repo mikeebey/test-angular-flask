@@ -23,6 +23,7 @@
     "bootstrap": "^4.3.1",
     "file-saver": "^2.0.2",
     "font-awesome": "4.7.0",
+    "nodeshift": "^6.0.1",
     "pptxgenjs": "^2.6.0",
     "primeicons": "^2.0.0",
     "primeng": "^8.1.1",

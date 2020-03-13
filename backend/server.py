@@ -15,13 +15,21 @@ app = Flask(__name__)
 api = Api(app)
 
 CORS(app)
-
+HOST = "0.0.0.0"
+PORT = 5002
+print("HERE")
 class getBasicInfo(Resource):
     def get(self):
         return "Information"
 
+class checkServer(Resource):
+    def get(self):
+        return "HEY I'm HERE"
+
 api.add_resource(getBasicInfo,'/getbasicinfo')
+api.add_resource(checkServer,'/')
 
 
 if __name__ == '__main__':
-    app.run(port=5002)
+    app.run(host=HOST,debug=True,port=PORT)
+    #app.run(port=5002)

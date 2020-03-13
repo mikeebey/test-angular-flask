@@ -1,0 +1,36 @@
+﻿kind: LimitRange
+apiVersion: v1
+metadata:
+  name: resource-limits2
+  namespace: angular-flask
+  selfLink: /api/v1/namespaces/web-apps/limitranges/resource-limits
+  uid: 54b6f275-d1d9-4912-b582-77866420e087
+  resourceVersion: '158242655'
+  creationTimestamp: '2020-03-03T22:41:09Z'
+spec:
+  limits:
+    - type: Pod
+      max:
+        cpu: '2'
+        memory: 1Gi
+      min:
+        cpu: 7m
+        memory: 100Mi
+    - type: Container
+      max:
+        cpu: '2'
+        memory: 1Gi
+      min:
+        cpu: 7m
+        memory: 100Mi
+      default:
+        cpu: '1'
+        memory: 1Gi
+      defaultRequest:
+        cpu: 20m
+        memory: 1Gi
+    - type: PersistentVolumeClaim
+      max:
+        storage: 1Gi
+      min:
+        storage: 1Gi
