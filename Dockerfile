@@ -10,5 +10,6 @@ RUN npm install
 RUN npm run build --prod
 
 #2nd Stage: Run Node app
-FROM nginx:alpine
+#FROM nginx:alpine
+FROM bitnami/nginx:latest
 COPY --from=node /app/dist/try-angular-flask /usr/share/nginx/html
